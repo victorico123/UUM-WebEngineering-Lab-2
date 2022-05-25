@@ -1,0 +1,77 @@
+.hero-header {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: #C04848;  /* fallback for old browsers */
+    background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.352)), url("../assets/application/background-landing.jfif"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#svg-teaching {
+    width: 100%;
+}
+
+.parent-landing-card {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+.parent-landing-card::-webkit-scrollbar {
+    display: none;
+  }
+
+.landing-card {
+    border-radius: 15px 50px;
+    width: 35%;
+    padding:2%;
+    margin:auto;
+}
+
+.register-card {
+    border-radius: 15px 50px;
+    width: 75%;
+    padding:2%;
+    margin:auto;
+}
+
+.login-card {
+    border-radius: 15px 50px;
+    width: 45%;
+    padding:2%;
+    margin:auto;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    text-align: left;
+    width: 100%;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s; 
+    /* font-family: 'Arizonia'; */
+}
+  
+@keyframes fadeEffect {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+#photoShowId{
+    border: 1px solid rgb(167, 167, 167);
+    max-height:200px;
+    max-width:300px;
+    height:auto;
+    width:auto;
+}
+
+/* login */
