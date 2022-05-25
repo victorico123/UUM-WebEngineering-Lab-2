@@ -1,14 +1,4 @@
 
-function openForm(evt, form) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    document.getElementById(form).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
 function readURL(input, id) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -25,10 +15,5 @@ $("#uploadBtn").change(function () {
     readURL(this, 'photoShowId');
 });
 
-let urlParams = new URLSearchParams(location.search)
-    if (urlParams.get("form") == "register") {
-        openForm(event, 'register_card');
-    } else if (urlParams.get("form") == "login") {
-        openForm(event, 'login_card');
-    }
+
 

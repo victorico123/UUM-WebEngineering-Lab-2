@@ -162,7 +162,7 @@
         </div>
     </header>
 </body>
-<script src="../js/landing.js" defer></script>
+<script src="../js/landing.js"></script>
 <script>
     let urlParams = new URLSearchParams(location.search)
     if (urlParams.get("form") == "register") {
