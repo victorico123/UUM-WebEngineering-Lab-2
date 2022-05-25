@@ -35,7 +35,7 @@ if (isset($_POST)) {
       $error = "Please enter name with minimum 8 character and alphanumeric";
       
     }else{
-          $target_dir = "../assets/uploads/";
+          $target_dir = "../assets/profiles/";
     $imageFileType = strtolower(pathinfo($_FILES['fileUpload']["name"], PATHINFO_EXTENSION));
     $target_file = $target_dir.getRandomString().$imageFileType;
 
@@ -44,16 +44,17 @@ if (isset($_POST)) {
     $stmt = $conn->prepare($sqlinsert);
     $stmt->bind_param("ssssss",$email,$name,$phone,$password,$address,$target_file);
 
-    if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file && $stmt->execute())) {
-        echo "<script>alert('Success')</script>";
-        echo "<script>window.location.replace('index.php?form=login')</script>";
+    $upload = move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file);
+    if ( $upload != null&& $stmt->execute()) {
+
+        echo "<script>window.location.replace('index.php?success=1&form=login')</script>";
       } else {
         echo "<script>alert('Failed')</script>";
         $error = "Failed Sign Up";
       }
       // echo "<script>window.location.replace('index.php?form=login')</script>";
     }
-    echo "<script>window.location.replace('index.php?msgRegister=$error&form=register')</script>";
+    echo "<script>window.location.replace('index.php?success=0&msgRegister=$error&form=register')</script>";
 
 
 }

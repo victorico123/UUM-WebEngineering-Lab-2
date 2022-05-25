@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,17 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Tutor</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/landing.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -34,15 +26,31 @@
         evt.currentTarget.className += " active";
     }
 </script>
+
 <body>
     <header>
         <div class='hero-header align-items-center align-content-center justify-content-center p-'>
-
+            <?php
+            if (isset($_GET['success'])) {
+                if ($_GET['success'] == 1) {
+            ?>
+                    <div class="alert alert-success" style="position:absolute; width:100%; z-index: 100;">
+                        <strong>Account successfully registered!</strong>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="alert alert-danger" style="position:absolute; width:100%; z-index: 100;">
+                        <strong>Failed to register account!</strong>
+                    </div>
+            <?php
+                }
+            }
+            ?>
             <div class="parent-landing-card " style="height: 100vh;">
                 <div class="card landing-card tabcontent">
                     <div>
-                        <object id="svg-teaching" data="../assets/application/svg/teaching.svg"
-                            type="image/svg+xml"></object>
+                        <object id="svg-teaching" data="../assets/application/svg/teaching.svg" type="image/svg+xml"></object>
                     </div>
                     <div class="card-body text-dark">
                         <h3 class="card-title"><span style="color:blue">My</span><span class="tutor-text">Tutor</span>
@@ -64,8 +72,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="EmailInput" class="text-left">Email address</label>
-                                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp"
-                                    placeholder="Enter email">
+                                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <div class="form-group">
                                 <label for="PasswordInput">Password</label>
@@ -80,7 +87,7 @@
 
 
                         </p>
-                        <hr >
+                        <hr>
                         <button class="btn btn-secondary tablinks">Sign In</button>
                         <button class="btn btn-primary tablinks" onclick="openForm(event, 'register_card')">Sign
                             Up</button>
@@ -98,23 +105,19 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                         <label for="nameInput" class="text-left">Name <span style="color: red;">*</span></label>
-                                        <input type="text" class="form-control" id="nameInput" name="name"
-                                            aria-describedby="nameHelp" placeholder="Name">
+                                        <input type="text" class="form-control" id="nameInput" name="name" aria-describedby="nameHelp" placeholder="Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="emailInput" class="text-left">Email address <span style="color: red;">*</span></label>
-                                        <input type="email" class="form-control" id="emailInput" name="email"
-                                            aria-describedby="emailHelp" placeholder="Email">
+                                        <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                         <label for="passwordInput">Password <span style="color: red;">*</span></label>
-                                        <input type="password" class="form-control" id="passwordInput" name="password"
-                                            placeholder="Password">
+                                        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <label for="phoneInput">Phone Number <span style="color: red;">*</span></label>
-                                        <input type="text" class="form-control" id="phoneInput" name="phone"
-                                            placeholder="Phone Number">
+                                        <input type="text" class="form-control" id="phoneInput" name="phone" placeholder="Phone Number">
                                     </div>
                                     <div class="form-group">
                                         <label for="adressInput">Home Address <span style="color: red;">*</span></label>
@@ -126,22 +129,20 @@
                                     <div style="max-height: 100%;">
                                         <div class="form-group">
                                             <label class="form-label" for="uploadBtn">Input Profile Picture <span style="color: red;">*</span></label>
-                                            <input id="uploadBtn" type="file" class="upload form-control"
-                                                multiple="multiple" accept="image/*" name="fileUpload" />
+                                            <input id="uploadBtn" type="file" class="upload form-control" multiple="multiple" accept="image/*" name="fileUpload" />
                                             <br>
                                             <div id="upload_prev">
-                                                <img id="photoShowId" src="../assets/application/default-user.png" width="auto" height="200px"
-                                                    />
+                                                <img id="photoShowId" src="../assets/application/default-user.png" width="auto" height="200px" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="text-left">
                                         <p class="text-danger">* <span class="text-dark">Required</span></p>
                                         <?php
-                                            if(isset($_GET['msgRegister'])){
-                                                $message = $_GET['msgRegister'];
-                                                echo "<p class=\"text-danger\">$message</p>";
-                                            }
+                                        if (isset($_GET['msgRegister'])) {
+                                            $message = $_GET['msgRegister'];
+                                            echo "<p class=\"text-danger\">$message</p>";
+                                        }
                                         ?>
                                     </div>
                                 </div>
@@ -161,27 +162,14 @@
         </div>
     </header>
 </body>
-<script src="../js/landing.js"></script>
+<script src="../js/landing.js" defer></script>
 <script>
-     let urlParams = new URLSearchParams(location.search)
-            if(urlParams.get("form") == "register"){
-                openForm(event, 'register_card');
-            }else if(urlParams.get("form") == "login"){
-                openForm(event, 'login_card');
-            }
-    // var str = window.location.hash.substr(1);
-    // console.log(str);
-    // var strArray = str.split("?");
-    //     hash=strArray[0];
-    //     console.log(hash);
-    // if (hash == "login") {
-    //     console.log(hash);
-    //     openForm(event, 'login_card');
-    // }
-    // if (hash == "register") {
-    //     console.log(hash);
-    //     openForm(event, 'register_card');
-    // }
+    let urlParams = new URLSearchParams(location.search)
+    if (urlParams.get("form") == "register") {
+        openForm(event, 'register_card');
+    } else if (urlParams.get("form") == "login") {
+        openForm(event, 'login_card');
+    }
 </script>
 
 </html>

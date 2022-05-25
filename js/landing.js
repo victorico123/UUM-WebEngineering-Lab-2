@@ -25,4 +25,10 @@ $("#uploadBtn").change(function () {
     readURL(this, 'photoShowId');
 });
 
+let urlParams = new URLSearchParams(location.search)
+    if (urlParams.get("form") == "register") {
+        openForm(event, 'register_card');
+    } else if (urlParams.get("form") == "login") {
+        openForm(event, 'login_card');
+    }
 
