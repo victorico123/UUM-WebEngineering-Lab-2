@@ -38,10 +38,16 @@
                         <strong>Account successfully registered!</strong>
                     </div>
                 <?php
-                } else {
+                } else if ($_GET['success'] == 0) {
                 ?>
                     <div class="alert alert-danger" style="position:absolute; width:100%; z-index: 100;">
                         <strong>Failed to register account!</strong>
+                    </div>
+                <?php
+                } else if ($_GET['success'] == 2) {
+                ?>
+                    <div class="alert alert-danger" style="position:absolute; width:100%; z-index: 100;">
+                        <strong>Failed to Login!</strong>
                     </div>
             <?php
                 }
@@ -69,19 +75,32 @@
                         </h3>
                         <h5 style="color:blue">SIGN IN</h5>
                         <p class="left">
-                        <form>
+                        <form method="POST" action="login.php">
                             <div class="form-group">
-                                <label for="EmailInput" class="text-left">Email address</label>
-                                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                                <label for="EmailInput" class="text-left">Email address <span style="color: red;">*</span></label>
+                                <input type="email" class="form-control" id="EmailInput" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="<?php if (isset($_COOKIE['email'])) {
+                                                                                                                                                                        echo $_COOKIE['email'];
+                                                                                                                                                                    } ?>">
                             </div>
                             <div class="form-group">
-                                <label for="PasswordInput">Password</label>
-                                <input type="password" class="form-control" id="PasswordInput" placeholder="Password">
+                                <label for="PasswordInput">Password <span style="color: red;">*</span></label>
+                                <input type="password" class="form-control" id="PasswordInput" name="password" placeholder="Password" value="<?php if (isset($_COOKIE['password'])) {
+                                                                                                                                                    echo $_COOKIE['password'];
+                                                                                                                                                } ?>">
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="rememberInput">
+                                <input type="checkbox" class="form-check-input" name="rem" id="rememberInput" <?php if (isset($_COOKIE['remember_me'])) {
+                                                                                                                    echo "checked";
+                                                                                                                } ?>>
                                 <label class="form-check-label" for="rememberInput">Remember Me</label>
                             </div>
+                            <br>
+                            <?php
+                            if (isset($_GET['msgLogin'])) {
+                                $message = $_GET['msgLogin'];
+                                echo "<p class=\"text-danger\">$message</p>";
+                            }
+                            ?>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
 
