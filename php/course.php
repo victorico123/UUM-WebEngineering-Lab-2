@@ -185,6 +185,14 @@ $next = $page + 1;
     </div>
   </main>
   <!--Main layout-->
+  
+  <br><br><br>
+    <footer class="bg-dark fixed-bottom text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p class="text-light" style="display: inline-block;">&copy; 2022 Copyright:</p>
+            <a class="text-light" href="#contact">Juanrico Alvaro</a>
+        </div>
+    </footer>
   <script type="text/javascript" src="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_4.1.0/js/mdb.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

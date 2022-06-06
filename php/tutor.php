@@ -41,6 +41,25 @@ $next = $page + 1;
 </head>
 
 <body>
+<div class="modal fade" id="modalCenter" tabindex="-10" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLongTitle">Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Are You sure you want to log out?</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn-primary" data-dismiss="modal" aria-label="Close">Stay</button>
+          <a href="logout.php"><button type="button" class=" btn-danger">Logout</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--Main Navigation-->
   <header>
     <!-- Sidebar -->
@@ -60,8 +79,8 @@ $next = $page + 1;
         <br>
         <div >
           <div class="list-group mx-3 mt-4 align-bottom">
-            <a href="#" class="list-group-item list-group-item-action py-2 text-white text-center" style="background-color:red"><span>Logout</span></a>
-  
+            <button class="list-group-item list-group-item-action py-2 text-white text-center" data-toggle="modal" data-target="#modalCenter" style="background-color:red">Logout</button>
+
           </div>
         </div>
 
@@ -151,6 +170,14 @@ $next = $page + 1;
     </div>
   </main>
   <!--Main layout-->
+  
+  <br><br><br>
+    <footer class="bg-dark fixed-bottom text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p class="text-light" style="display: inline-block;">&copy; 2022 Copyright:</p>
+            <a class="text-light" href="#contact">Juanrico Alvaro</a>
+        </div>
+    </footer>
   <script type="text/javascript" src="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_4.1.0/js/mdb.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
