@@ -26,12 +26,12 @@ if ('POST' === $_SERVER['REQUEST_METHOD']) {
                     setcookie('email', $email, $remembering_timespan);
                     setcookie('password', $password, $remembering_timespan);
                     setcookie('remember_me', "checked", $remembering_timespan);
-                    echo "remember me";
+                    // echo "remember me";
                 } else {
                     setcookie("email", "", time() - 3600);
                     setcookie("password", "", time() - 3600);
                     setcookie("remember_me", "", time() - 3600);
-                    echo "remember me not";
+                    // echo "remember me not";
                 }
                 session_start();
                 $_SESSION["user_name"] = $user_name;

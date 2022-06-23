@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['user_name'])) {
+  echo "<script>window.location.replace('course.php')</script>";
+  echo "<script>console.log("+ $_SESSION['user_name']+")</script>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
